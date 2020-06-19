@@ -1,4 +1,4 @@
-class Location {
+class Locations {
     name = "";
     address = "";
     city = "";
@@ -13,14 +13,18 @@ class Location {
     }
 
     display() {
-        return `<br>${this.name}<br> Address: ${this.address},${this.city}, ${this.zip}<br> ${this.image}<br>`;
+        return `<br>${this.name}<br> Address: ${this.address},${this.city}, ${this.zip}<br> ${this.image}<br>`; 
     };
 
-   
-};
 
+    //added this part
+/*    displayI(){
+       return `${this.image}`
+   }
+}; */
+//
 
-class Restaurant extends Location {
+class Restaurant extends Locations {
     telNumber = "";
     cuisine = "";
     web = "";
@@ -37,7 +41,7 @@ class Restaurant extends Location {
     };
 };
 
-class Events extends Location {
+class Events extends Locations {
     EventDate = "";
     EventTime = "";
     
@@ -54,20 +58,21 @@ class Events extends Location {
 };
 
 /* *************************create divs within wrapper*************************** */
-$("#wrapper").append(`<div class ="location d-flex flex-row flex-wrap"></div><div class="row"></div><div class="col sm-12 md-6 lg-3></div><div class = ${i}</div><br>`);
-$("#wrapper1").append(`<div class="restaurant d-flex flex-row flex-wrap"></div><div class="row"></div><div class="col sm-12 md-6 lg-3></div><br>`);
-$("#wrapper2").append(`<div class="events d-flex flex-row flex-wrap"></div><div class="row"></div><div class="col sm-12 md-6 lg-3></div><br>`)
+$("#wrapper").append(`<div class ="location"><p class="text text-white text-center mt-2 pb-3"</p></div><div class="row"><div class="col sm-12 md-6 lg-3"></div></div><br>`);
+$("#wrapper1").append(`<div class="restaurant text-warning text-center"></div><div class="row"><div class="col sm-12 md-6 lg-3"></div></div><br>`);
+$("#wrapper2").append(`<div class="events text-center text-white"></div><div class="row"><div class="col sm-12 md-6 lg-3"></div></div><br>`)
 
 /* *************************This creates the Places part*************************** */
 let place:any = new Array();
-place[0] = new Location('Augarten', 'Taborstrasse', 'Vienna', '1020', '<img src = img/augarten.jpg>');
-place[1] = new Location('Karlskirche', 'Karlsplatz 1', 'Vienna', '1010', '<img src = img/karlskirche.jpg>');
+place[0] = new Locations('Augarten', 'Taborstrasse', 'Vienna', '1020' , '<img src = img/augarten.jpg>' );
+place[1] = new Locations('Karlskirche', 'Karlsplatz 1', 'Vienna', '1010' , '<img src = img/karlskirche.jpg>');
 
 
 
 for (let i=0; i<place.length; i++){
-    $(".location").append(`${place[i].display()}`)
+    $(".text").append(`${place[i].display()}`)
 }
+
 
 /* *************************This creates the restaurant part*************************** */
 let restaurant:string = new Array();

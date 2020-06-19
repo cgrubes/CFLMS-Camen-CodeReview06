@@ -11,8 +11,8 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-var Location = /** @class */ (function () {
-    function Location(name, address, city, zip, image) {
+var Locations = /** @class */ (function () {
+    function Locations(name, address, city, zip, image) {
         this.name = "";
         this.address = "";
         this.city = "";
@@ -24,13 +24,18 @@ var Location = /** @class */ (function () {
         this.zip = zip;
         this.image = image;
     }
-    Location.prototype.display = function () {
+    Locations.prototype.display = function () {
         return "<br>" + this.name + "<br> Address: " + this.address + "," + this.city + ", " + this.zip + "<br> " + this.image + "<br>";
     };
     ;
-    return Location;
+    return Locations;
 }());
-;
+//added this part
+/*    displayI(){
+       return `${this.image}`
+   }
+}; */
+//
 var Restaurant = /** @class */ (function (_super) {
     __extends(Restaurant, _super);
     function Restaurant(name, address, city, zip, image, telNumber, cuisine, web) {
@@ -49,7 +54,7 @@ var Restaurant = /** @class */ (function (_super) {
     };
     ;
     return Restaurant;
-}(Location));
+}(Locations));
 ;
 var Events = /** @class */ (function (_super) {
     __extends(Events, _super);
@@ -67,18 +72,18 @@ var Events = /** @class */ (function (_super) {
     };
     ;
     return Events;
-}(Location));
+}(Locations));
 ;
 /* *************************create divs within wrapper*************************** */
-$("#wrapper").append("<div class =\"location d-flex flex-row flex-wrap\"></div><div class=\"row\"></div><div class=\"col sm-12 md-6 lg-3></div><div class = " + i + "</div><br>");
-$("#wrapper1").append("<div class=\"restaurant d-flex flex-row flex-wrap\"></div><div class=\"row\"></div><div class=\"col sm-12 md-6 lg-3></div><br>");
-$("#wrapper2").append("<div class=\"events d-flex flex-row flex-wrap\"></div><div class=\"row\"></div><div class=\"col sm-12 md-6 lg-3></div><br>");
+$("#wrapper").append("<div class =\"location\"><p class=\"text text-white text-center mt-2 pb-3\"</p></div><div class=\"row\"><div class=\"col sm-12 md-6 lg-3\"></div></div><br>");
+$("#wrapper1").append("<div class=\"restaurant text-warning text-center\"></div><div class=\"row\"><div class=\"col sm-12 md-6 lg-3\"></div></div><br>");
+$("#wrapper2").append("<div class=\"events text-center text-white\"></div><div class=\"row\"><div class=\"col sm-12 md-6 lg-3\"></div></div><br>");
 /* *************************This creates the Places part*************************** */
 var place = new Array();
-place[0] = new Location('Augarten', 'Taborstrasse', 'Vienna', '1020', '<img src = img/augarten.jpg>');
-place[1] = new Location('Karlskirche', 'Karlsplatz 1', 'Vienna', '1010', '<img src = img/karlskirche.jpg>');
+place[0] = new Locations('Augarten', 'Taborstrasse', 'Vienna', '1020', '<img src = img/augarten.jpg>');
+place[1] = new Locations('Karlskirche', 'Karlsplatz 1', 'Vienna', '1010', '<img src = img/karlskirche.jpg>');
 for (var i = 0; i < place.length; i++) {
-    $(".location").append("" + place[i].display());
+    $(".text").append("" + place[i].display());
 }
 /* *************************This creates the restaurant part*************************** */
 var restaurant = new Array();

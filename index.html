@@ -1,100 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.1.js"
-  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-  crossorigin="anonymous"></script>
-       <title>Vienna Blog</title>
-<style>
-    .location{
-        display: flex;
-        flex-direction: row;
-        font-family: Arial;
-        font-weight: bold;
-    }
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <title>Vienna Blog</title>
+    <style>
+        .location {
+            display: flex;
+            flex-direction: row;
+            font-family: Arial;
+            font-weight: bold;
+        }
 
-    .restaurant{
-        font-family: Arial;
-        font-weight: bold; 
-         }
+        .restaurant {
+            font-family: Arial;
+            font-weight: bold;
+        }
 
-    .events{
-        font-family: Arial;
-        font-weight: bold;
-    }
+        .events {
+            font-family: Arial;
+            font-weight: bold;
+        }
 
-    #wrapper{
-        display: flex;
-        justify-content: row;
-    }
+        img {
+            width: 300px;
+            height: 200px;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
 
-    img{
-        width:300px;
-        height:200px;
-        margin-left: 5px;
-        margin-right: 5px;
-    }
-</style>
+        #wrapper2 {
+            position: relative;
+            z-index: 1;
+        }
+
+        #wrapper2:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: .4;
+            z-index: -1;
+            background-image: url("img/events.jpg");
+        }
+
+        #wrapper {
+            position: relative;
+            z-index: 1;
+        }
+
+        #wrapper:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: .3;
+            z-index: -1;
+            background-image: url("img/vienna.jpg");
+            background-size: cover;
+            padding-right: 20px;
+        }
+
+        #wrapper1 {
+            position: relative;
+            z-index: 1;
+        }
+
+        #wrapper1:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-image: url("img/food.jpg");
+            background-size: cover;
+        }
+    </style>
 
 </head>
+
 <body>
     <div class="container-fluid bg-secondary">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark d-flex justify-content-end">
             <div class="nav-item active h2 text-white p-0">Vienna Blog
             </div>
-          
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav ml-auto">
-                <li class="nav-item active h4 pr-3">
-                  <a class="nav-link" href="#">City Info <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active h4 pr-3">
-                  <a class="nav-link" href="#">Contact</a>
-                </li>
-                <li class="nav-item active h4 pr-3">
-                    <a class="nav-link" href="#">About</a>
-                  </li>
-                  <li class="nav-item active h4">
-                    <a class="nav-link" href="#">Settings</a>
-                  </li>
-                
-            </div>
-          </nav>
 
-          <div class="alert alert-primary p-2 my-2">
-            <p class= "text-center h3">Places</p>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active h4 pr-3">
+                        <a class="nav-link" href="#">City Info <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active h4 pr-3">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                    <li class="nav-item active h4 pr-3">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item active h4">
+                        <a class="nav-link" href="#">Settings</a>
+                    </li>
+
+            </div>
+        </nav>
+
+        <div class="alert alert-primary p-2 my-2">
+            <p class="text-center h3">Places</p>
         </div>
 
-        <div id="wrapper" class="d-flex flex-row pb-3 pl-5"></div>
+        <div id="wrapper" class="d-flex justify-content-center pb-3 pl-5"></div>
 
         <div class="alert alert-warning p-2 my-2">
-            <p class= "text-center h3">Restaurants</p>
+            <p class="text-center h3">Restaurants</p>
         </div>
 
-        <div id="wrapper1" class="pl-5 pb-3"></div>
+        <div id="wrapper1" class="d-flex justify-content-center pl-5 pb-3"></div>
 
         <div class="alert alert-secondary p-2 my-2">
-            <p class= "text-center h3">Events</p>
+            <p class="text-center h3">Events</p>
         </div>
 
-        <div id="wrapper2" class="pl-5 pb-3"></div>
-        
-<!-- Footer -->
-<footer class="page-footer font-small blue">
+        <div id="wrapper2" class="pl-5 pb-3 d-flex justify-content-center"></div>
 
-    <!-- Copyright -->
-    <div class="footer-copyright text-center py-3 text-white bg-dark">© 2020 Copyright:
-      <a class="text-white"href="#"> Vienna Blog</a>
-    </div>
-    <!-- Copyright -->
-  
-  </footer>
-  <!-- Footer -->
+        <!-- Footer -->
+        <footer class="page-footer font-small blue">
 
-<script src=tsconfig.json></script>
-<script src="script.js"></script>
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3 text-white bg-dark">© 2020 Copyright:
+                <a class="text-white" href="#"> Vienna Blog</a>
+            </div>
+            <!-- Copyright -->
+
+        </footer>
+        <!-- Footer -->
+
+        <script src=tsconfig.json></script>
+        <script src="script.js"></script>
 </body>
+
 </html>
